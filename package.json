@@ -1,0 +1,27 @@
+{
+  "name": "clonix",
+  "version": "1.0.0",
+  "description": "Download and archive any HTML website with its pages and assets.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "website",
+    "clone",
+    "crawler",
+    "archiver",
+    "scraper"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2",
+    "fs-extra": "^11.2.0",
+    "uuid": "^11.1.0"
+  }
+}

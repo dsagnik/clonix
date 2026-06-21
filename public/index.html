@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clonix - Clone HTML Websites in Seconds</title>
+  <meta name="description"
+    content="Download and archive any HTML website with its pages, CSS, JavaScript, images and assets in a structured ZIP archive." />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- Animated Background                                           -->
+  <!-- ============================================================ -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ============================================================ -->
+  <!-- Navbar                                                        -->
+  <!-- ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="navbar-logo" id="logo-link">
+        <!-- Logo SVG -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="28" height="20" rx="4" stroke="url(#logo-grad)" stroke-width="2.5" fill="none" />
+          <path d="M10 16 L14 20 L22 12" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#4F46E5" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-gradient">Clonix</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="navbar-links" id="navbar-links">
+        <a href="/" class="nav-link active" data-nav="home">Home</a>
+        <a href="/docs.html" class="nav-link" data-nav="docs">Documentation</a>
+        <a href="/about.html" class="nav-link" data-nav="about">About</a>
+        <a href="#hero-clone" class="nav-cta" id="nav-cta-btn">Clone Website</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- VIEW: Home                                                    -->
+  <!-- ============================================================ -->
+  <div class="view active" id="view-home">
+    <main class="page-content">
+
+      <!-- Hero -->
+      <section class="hero container">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          Open Source Website Archiver
+        </div>
+        <h1>Clone <span class="gradient-text">HTML Websites</span><br />in Seconds</h1>
+        <p class="hero-subtitle">
+          Download complete HTML websites including pages, CSS, JavaScript,
+          images and assets in a structured ZIP archive.
+        </p>
+        <div class="hero-clone-card" id="hero-clone">
+          <div class="clone-input-group">
+            <input type="url" class="clone-input" id="url-input" placeholder="example.com" autocomplete="url"
+              spellcheck="false" />
+            <button class="clone-btn" id="clone-btn">
+              <span id="clone-btn-text">Start Cloning</span>
+            </button>
+          </div>
+          <div class="clone-error" id="clone-error"></div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section container" id="features-section">
+        <div class="section-header reveal">
+          <span class="section-label">Features</span>
+          <h2 class="section-title">Everything you need to archive websites</h2>
+          <p class="section-desc">
+            A complete toolkit for downloading and preserving HTML websites with all their assets.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- 1 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="5" r="3" />
+                <circle cx="5" cy="19" r="3" />
+                <circle cx="19" cy="19" r="3" />
+                <line x1="12" y1="8" x2="5" y2="16" />
+                <line x1="12" y1="8" x2="19" y2="16" />
+              </svg>
+            </div>
+            <h3>Recursive Page Discovery</h3>
+            <p>Automatically finds and follows internal links to discover every page on the site.</p>
+          </div>
+          <!-- 2 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </div>
+            <h3>Asset Downloader</h3>
+            <p>Downloads CSS, JavaScript, fonts, and images while preserving references.</p>
+          </div>
+          <!-- 3 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                <path d="M10 13h4" />
+                <path d="M10 17h4" />
+              </svg>
+            </div>
+            <h3>Folder Structure Preservation</h3>
+            <p>Maintains the same directory layout as the original website structure.</p>
+          </div>
+          <!-- 4 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 8v13H3V8" />
+                <path d="M1 3h22v5H1z" />
+                <path d="M10 12h4" />
+              </svg>
+            </div>
+            <h3>ZIP Export</h3>
+            <p>Creates well-organized, downloadable ZIP archives ready for offline use.</p>
+          </div>
+          <!-- 5 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+            </div>
+            <h3>Fast Processing</h3>
+            <p>Optimized parallel crawling and batch downloads for maximum speed.</p>
+          </div>
+          <!-- 6 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <h3>Static HTML Focus</h3>
+            <p>Built specifically for archiving traditional HTML-based websites.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section container" id="how-section">
+        <div class="section-header reveal">
+          <span class="section-label">How It Works</span>
+          <h2 class="section-title">Four simple steps</h2>
+          <p class="section-desc">From URL to ZIP archive in just a few moments.</p>
+        </div>
+
+        <div class="steps-timeline">
+          <div class="step-item reveal">
+            <div class="step-indicator">
+              <div class="step-number">1</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>Enter Website URL</h3>
+              <p>Paste the URL of any HTML-based website you want to archive.</p>
+            </div>
+          </div>
+          <div class="step-item reveal">
+            <div class="step-indicator">
+              <div class="step-number">2</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>Crawler Scans Pages</h3>
+              <p>Our crawler recursively discovers all internal pages and linked resources.</p>
+            </div>
+          </div>
+          <div class="step-item reveal">
+            <div class="step-indicator">
+              <div class="step-number">3</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>Assets Are Downloaded</h3>
+              <p>CSS, JavaScript, images, and fonts are downloaded and organized.</p>
+            </div>
+          </div>
+          <div class="step-item reveal">
+            <div class="step-indicator">
+              <div class="step-number">4</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>ZIP Archive Is Generated</h3>
+              <p>Everything is packaged into a clean ZIP file ready for download.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Clonix &mdash; Built for archiving &amp; offline browsing.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- VIEW: Progress                                                -->
+  <!-- ============================================================ -->
+  <div class="view" id="view-progress">
+    <div class="progress-page">
+      <div class="container">
+        <div class="progress-card pulse" id="progress-card">
+          <p class="progress-url" id="progress-url"></p>
+          <h2 class="progress-title">Cloning Website</h2>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar" style="width: 0%"></div>
+          </div>
+          <div class="progress-percentage" id="progress-pct">0%</div>
+          <p class="progress-action" id="progress-action">Initializing...</p>
+          <div class="progress-stats">
+            <div class="progress-stat">
+              <div class="stat-value" id="stat-pages">0</div>
+              <div class="stat-label">Pages Found</div>
+            </div>
+            <div class="progress-stat">
+              <div class="stat-value" id="stat-assets">0</div>
+              <div class="stat-label">Assets Downloaded</div>
+            </div>
+            <div class="progress-stat">
+              <div class="stat-value" id="stat-files">0</div>
+              <div class="stat-label">Files Processed</div>
+            </div>
+            <div class="progress-stat">
+              <div class="stat-value" id="stat-time">00:00:00</div>
+              <div class="stat-label">Elapsed Time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- VIEW: Download                                                -->
+  <!-- ============================================================ -->
+  <div class="view" id="view-download">
+    <div class="download-page">
+      <div class="container">
+        <div class="download-card">
+          <div class="success-checkmark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <h2 class="download-title">Website Successfully Cloned</h2>
+          <p class="download-subtitle" id="download-url"></p>
+          <div class="download-stats">
+            <div class="download-stat">
+              <div class="stat-value" id="dl-pages">0</div>
+              <div class="stat-label">Pages Found</div>
+            </div>
+            <div class="download-stat">
+              <div class="stat-value" id="dl-assets">0</div>
+              <div class="stat-label">Assets Downloaded</div>
+            </div>
+            <div class="download-stat">
+              <div class="stat-value" id="dl-size">0 B</div>
+              <div class="stat-label">ZIP Size</div>
+            </div>
+            <div class="download-stat">
+              <div class="stat-value" id="dl-time">00:00:00</div>
+              <div class="stat-label">Processing Time</div>
+            </div>
+          </div>
+          <div class="download-actions">
+            <a class="btn-download" id="download-btn" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download ZIP
+            </a>
+            <button class="btn-secondary" id="clone-another-btn">Clone Another Website</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- VIEW: Error                                                   -->
+  <!-- ============================================================ -->
+  <div class="view" id="view-error">
+    <div class="error-page">
+      <div class="container">
+        <div class="error-card">
+          <div class="error-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </div>
+          <h2>Cloning Failed</h2>
+          <p id="error-message">An unexpected error occurred while cloning the website.</p>
+          <button class="btn-secondary" id="error-retry-btn">Try Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>

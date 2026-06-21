@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation - Clonix</title>
+  <meta name="description"
+    content="Clonix documentation - supported file types, limitations, and frequently asked questions." />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="navbar-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="28" height="20" rx="4" stroke="url(#lg2)" stroke-width="2.5" fill="none" />
+          <path d="M10 16 L14 20 L22 12" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="lg2" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#4F46E5" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-gradient">Clonix</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/docs.html" class="nav-link active">Documentation</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/" class="nav-cta">Clone Website</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Docs Content -->
+  <div class="page-content">
+    <div class="content-page container">
+      <div class="page-header">
+        <h1>Documentation</h1>
+        <p>Everything you need to know about using Clonix to archive HTML websites.</p>
+      </div>
+
+      <!-- Supported / Not Supported -->
+      <div class="docs-columns">
+        <div class="docs-list-card supported reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" width="22" height="22">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="16 10 11 16 8 13" />
+            </svg>
+            Supported
+          </h3>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              HTML websites &amp; pages
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              CSS stylesheets
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              JavaScript files
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Images (PNG, JPG, SVG, WebP, GIF, ICO)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Web Fonts (WOFF, WOFF2, TTF, EOT, OTF)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              PDF documents
+            </li>
+          </ul>
+        </div>
+
+        <div class="docs-list-card not-supported reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" width="22" height="22">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            Not Supported
+          </h3>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              React / Vue / Svelte apps
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Next.js / Nuxt applications
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Angular single-page apps
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Backend / server-side code
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Databases &amp; dynamic content
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section reveal">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-1">
+            How does Clonix work?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Clonix starts by fetching the homepage of the provided URL. It then parses the HTML to discover
+              internal links,
+              stylesheets, scripts, and images. It recursively visits internal pages, downloads all discovered assets,
+              rewrites URLs to local relative paths, and packages everything into a downloadable ZIP archive.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-2">
+            What types of websites can I clone?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Clonix works best with traditional HTML-based websites. Static sites, documentation pages, blogs,
+              and portfolios are ideal candidates. Websites that rely heavily on JavaScript frameworks like React,
+              Angular, or Vue for rendering content may not be fully captured since their content is generated
+              dynamically.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-3">
+            Is there a page limit?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              By default, Clonix will crawl up to 100 pages per website. This limit helps prevent extremely long
+              processing times and ensures a reasonable download size. For most websites, this covers all primary
+              content.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-4">
+            Will the cloned website look the same as the original?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              For static HTML websites, the cloned version should look very similar to the original. All CSS, images,
+              and JavaScript files are downloaded and URLs are rewritten to work locally. However, features that depend
+              on a server (like forms, search, or APIs) will not function in the offline copy.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-5">
+            How long are downloads available?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              ZIP files are stored on the server for 30 minutes after generation. Make sure to download your archive
+              promptly. After 30 minutes, the file is automatically deleted to save server resources.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-6">
+            Is it legal to clone websites?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Clonix is designed for archiving websites you own or have permission to copy. Always respect copyright,
+              terms of service, and robots.txt directives. Using this tool to clone websites without authorization may
+              violate applicable laws and regulations.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Clonix &mdash; Built for archiving &amp; offline browsing.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>

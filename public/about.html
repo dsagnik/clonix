@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Clonix</title>
+  <meta name="description"
+    content="Learn about Clonix - a free tool for website backup, offline browsing, migration, and educational purposes." />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="navbar-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="28" height="20" rx="4" stroke="url(#lg)" stroke-width="2.5" fill="none" />
+          <path d="M10 16 L14 20 L22 12" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#4F46E5" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-gradient">Clonix</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/docs.html" class="nav-link">Documentation</a>
+        <a href="/about.html" class="nav-link active">About</a>
+        <a href="/" class="nav-cta">Clone Website</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Content -->
+  <div class="page-content">
+    <div class="content-page container">
+      <div class="page-header">
+        <h1>About <span class="gradient-text"
+            style="background:linear-gradient(135deg,#4F46E5,#7C3AED,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Clonix</span>
+        </h1>
+        <p>A modern tool designed to help you download and archive HTML-based websites for legitimate purposes.</p>
+      </div>
+
+      <div class="use-cases-grid">
+
+        <!-- Website Backup -->
+        <div class="use-case-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+          </div>
+          <h3>Website Backup</h3>
+          <p>Create offline backups of your own websites to protect against data loss, server issues, or hosting
+            changes.</p>
+        </div>
+
+        <!-- Offline Browsing -->
+        <div class="use-case-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="1" y1="1" x2="23" y2="23" />
+              <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55" />
+              <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39" />
+              <path d="M10.71 5.05A16 16 0 0 1 22.56 9" />
+              <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88" />
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+              <line x1="12" y1="20" x2="12.01" y2="20" />
+            </svg>
+          </div>
+          <h3>Offline Browsing</h3>
+          <p>Download websites for reading and reference when you don't have an internet connection.</p>
+        </div>
+
+        <!-- Website Migration -->
+        <div class="use-case-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>Website Migration</h3>
+          <p>Download a static copy of a website as a starting point for migrating to a new host or platform.</p>
+        </div>
+
+        <!-- Educational Use -->
+        <div class="use-case-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <h3>Educational Purposes</h3>
+          <p>Study website structure, CSS techniques, and HTML patterns by examining real-world examples locally.</p>
+        </div>
+
+        <!-- Owned Websites -->
+        <div class="use-case-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Your Own Websites</h3>
+          <p>Clonix is intended for websites you own or have explicit permission to clone and archive.</p>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="use-case-card notice-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </div>
+          <h3>Responsible Use</h3>
+          <p>
+            Clonix is a tool for legitimate archiving purposes. Always ensure you have permission to download
+            and archive a website before using this tool. Respect robots.txt, terms of service, and copyright.
+            Do not use Clonix to copy websites you do not own without explicit authorization.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Clonix &mdash; Built for archiving &amp; offline browsing.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>
