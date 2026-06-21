@@ -18,6 +18,19 @@ Whether you're creating offline backups, migrating hosts, or studying web archit
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home View
+![Clonix Home](public/home.png)
+
+### ℹ️ About View
+![Clonix About](public/about.png)
+
+### 📚 Documentation
+![Clonix Documentation](public/docs.png)
+
+---
+
 ## ✨ Features
 
 - **🕸️ Recursive Page Discovery:** Automatically crawls internal links to find all HTML pages belonging to the domain.
