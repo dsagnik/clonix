@@ -55,7 +55,7 @@ Make sure you have [Node.js](https://nodejs.org/) (v16 or newer) installed.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/clonix.git
+   git clone https://github.com/dsagnik/clonix.git
    cd clonix
    ```
 
